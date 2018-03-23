@@ -152,8 +152,8 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id `feh --bg-scale $HOME/Documents/wallpaper.jpg`
 
 # color defines for i3
-set $activebg        #ffb52a
-set $activebd        #ffb52a
+set $activebg        #23c48e
+set $activebd        #23c48e
 set $activetx        #0e0e0e
 set $unfocusedbg     #555555
 set $unfocusedbd     #555555
