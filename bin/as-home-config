@@ -67,6 +67,8 @@ if [[ $GITSTATUS == *"nothing to commit"* ]]; then
 	echo $GITSTATUS
 	exit 0
 else
+	echo $GITSTATUS
+	
 	# Add alterações
 	git add .
 
