@@ -60,16 +60,19 @@ cp -R -u $HOME/bin $HOME/linux-configs
 
 # Ascede ao diretório e verifica com git
 cd $HOME/linux-configs
-git status
+GITSTATUS=$(git status)
 
-# Add alterações
-git add .
+if [[ $GITSTATUS == *"up to date"* ]]; then
+	echo $GITSTATUS
+	exit 0
+else
+	# Add alterações
+	git add .
 
-# Realiza o commit
-git commit -m "Auto commit $(date +"%F %R")"
+	# Realiza o commit
+	git commit -m "Auto commit $(date +"%F %R")"
 
-# Envia as alterações
-git push origin master
-
-
+	# Envia as alterações
+	git push origin master
+fi
 
