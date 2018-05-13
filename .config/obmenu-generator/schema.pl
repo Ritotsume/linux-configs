@@ -24,7 +24,7 @@ our $SCHEMA = [
     # Format:  NAME, LABEL, ICON
     {sep => "ArchLinux"},
     {item => ['termite', 'Terminal', 'terminal']},
-    {item => ['opera', 'Web Browser', 'opera']},
+    {item => ['chromium', 'Web Browser', 'chromium']},
     {item => ['exo-open --launch FileManager', 'File Manager', 'file-manager']},
     {sep => undef},
     {cat => ['utility', 'Accessories', 'applications-utilities']},

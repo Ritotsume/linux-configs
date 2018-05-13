@@ -18,6 +18,8 @@ stalonetray -c $HOME/.config/stalonetray/stalonetrayrc &
 # Openbox autostart
 ob-autostart -d &
 
+thunar --daemon &
+
 # PolicyKit authentication
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
