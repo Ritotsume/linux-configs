@@ -1,0 +1,14 @@
+#!/bin/bash
+
+DEVICES=`~/Android/Sdk/tools/emulator -list-avds`
+echo "Emuladores encontrados"
+for emulators in "$DEVICES" 
+do
+	echo "$emulators"
+done
+
+echo "-----------------------------------------------------"
+echo "Escolha um emulador: "
+read AEMULATOR
+
+`LD_PRELOAD=/usr/lib/libstdc++.so.6 optiprime ~/Android/Sdk/tools/emulator -netdelay none -netspeed full -avd "$AEMULATOR"`

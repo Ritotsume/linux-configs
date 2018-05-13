@@ -1,0 +1,31 @@
+# compton
+al-compositor --start &
+
+#$HOME/.config/setup &
+# enable numlock, commented out for laptop users
+# numlockx &
+
+# restore wallpaper
+nitrogen --restore &
+
+# start panel
+sleep 1; polybar --config=/home/gian/.config/polybar/config openbox-bar &
+
+# system tray
+# sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
+stalonetray -c $HOME/.config/stalonetray/stalonetrayrc &
+
+# Openbox autostart
+ob-autostart -d &
+
+# PolicyKit authentication
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Required for xfce settings to work
+xfsettingsd &
+
+# Side panel shortcuts for file managers
+xdg-user-dirs-gtk-update &
+
+$HOME/.config/keypack &
+# al-hello

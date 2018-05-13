@@ -30,7 +30,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -149,8 +150,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec --no-startup-id `feh --bg-scale $HOME/Documents/wallpaper.jpg`
-
 # color defines for i3
 set $activebg        #23c48e
 set $activebd        #23c48e
@@ -171,8 +170,14 @@ client.unfocused            $unfocusedbd   $unfocusedbg   $unfocusedtx
 client.focused_inactive     $fcinactbd     $fcinactbg     $fcinacttx
 client.urgent               $urgentbd      $urgentbg      $urgenttx
 
+# personalized keys
+bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master 1+ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindsym XF86TouchpadToggle exec --no-startup-id touchpad-toggle
+
 set $polybar $HOME/.config/polybar/launch.sh
+exec --no-startup-id `feh --bg-fill $HOME/Imagens/wallpaper-green-2.jpg`
 exec_always --no-startup-id $polybar
-exec_always --no-startup-id `feh --bg-fill $HOME/Documents/wallpaper.jpg`
 exec --no-startup-id compton -b
 
