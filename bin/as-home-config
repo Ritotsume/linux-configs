@@ -1,0 +1,75 @@
+#!/bin/bash
+# as-home-config
+#
+# Versão 1: Realiza o sincronismo das configs da home para o github
+# 
+# Gianfrancesco Scardua <gianfrancesco@outlook.com>
+# 
+
+# Pegando a versão pelo cabeçalho
+VERSION=$(grep '^# Vers' "$0" | tail -1 | cut -d : -f 1 | tr -d \#)
+
+# Mensagem de ajuda
+MESSAGE_USE="
+Uso: $(basename "$0") [OPÇÕES] 
+
+OPÇÕES:
+-h, --help		Mostra esta tela de ajuda e sai.
+-V, --version		Mostra a versão do programa e sai.
+"
+
+while test -n "$1"
+do
+	case "$1" in 
+		-h | --help)
+			echo "$MESSAGE_USE"
+			exit 0
+		;;
+
+		-V | --version)
+			echo $(basename "$0") "$VERSION"
+			exit 0
+		;;
+
+		*)
+			echo "Opção inválida:" $1
+			exit 1
+		;;
+	esac
+	
+	# A opção $1 foi processada, então a fila deve andar...
+	shift
+done
+
+# Realizando as cópias, de modo que só as atualizações sejam copiadas.
+cp -R -u $HOME/.config/i3 $HOME/linux-configs/.config
+cp -R -u $HOME/.config/jgmenu $HOME/linux-configs/.config
+cp -R -u $HOME/.config/networkmanager-dmenu $HOME/linux-configs/.config
+cp -R -u $HOME/.config/nitrogen $HOME/linux-configs/.config
+cp -R -u $HOME/.config/ob-autostart $HOME/linux-configs/.config
+cp -R -u $HOME/.config/obmenu-generator $HOME/linux-configs/.config
+cp -R -u $HOME/.config/openbox $HOME/linux-configs/.config
+cp -R -u $HOME/.config/polybar $HOME/linux-configs/.config
+cp -R -u $HOME/.config/skippy-xd $HOME/linux-configs/.config
+cp -R -u $HOME/.config/stalonetray $HOME/linux-configs/.config
+cp -R -u $HOME/.config/termite $HOME/linux-configs/.config
+cp -R -u $HOME/.config/tint2 $HOME/linux-configs/.config
+
+# Copiar a $HOME/bin
+cp -R -u $HOME/bin $HOME/linux-configs
+
+# Ascede ao diretório e verifica com git
+cd $HOME/linux-configs
+git status
+
+# Add alterações
+git add .
+
+# Realiza o commit
+git commit -m "Auto commit $(date +"%F %R")"
+
+# Envia as alterações
+git push origin master
+
+
+
