@@ -74,5 +74,5 @@ our $SCHEMA = [
     {pipe => ['al-kb-pipemenu', 'Display Keybinds', 'cs-keyboard']},
     {sep => undef},
     {item => ['i3lock-fancy -p', 'Lock Screen', 'lock']},
-    {item => ['oblogout', 'Exit Openbox', 'exit']},
+    {item => ['rofr.sh -l', 'Exit Openbox', 'exit']},
 ]
