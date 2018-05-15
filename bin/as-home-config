@@ -64,10 +64,10 @@ cd $HOME/linux-configs
 GITSTATUS=$(git status)
 
 if [[ $GITSTATUS == *"nothing to commit"* ]]; then
-	echo $GITSTATUS
+	git status
 	exit 0
 else
-	echo $GITSTATUS
+	git status
 	
 	# Add alterações
 	git add .
