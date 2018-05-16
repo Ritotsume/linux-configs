@@ -42,8 +42,8 @@ font                 = Ubuntu 12px
 #font_fallback       = xtg
 icon_size            = 24
 #icon_text_spacing   = 10
-#icon_theme          =
-#icon_theme_fallback = xtg
+icon_theme           = Papirus-Dark
+icon_theme_fallback  = Adwaita
 
 #arrow_string        = ▸
 #arrow_width         = 15
