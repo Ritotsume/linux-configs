@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BAR_ICON=""
+BAR_ICON=""
 ICON=/usr/share/icons/gnome/32x32/apps/system-software-update.png
 
 while true; do
