@@ -9,7 +9,7 @@ al-compositor --start &
 nitrogen --restore &
 
 # start panel
-sleep 1; polybar --config=/home/gian/.config/polybar/config openbox-bar &
+sleep 1; launch-polybar &
 
 # system tray
 # sleep 1; trayer --edge bottom --align left --widthtype request --SetDockType false --expand true &
