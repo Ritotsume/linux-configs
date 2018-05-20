@@ -87,13 +87,13 @@
     <right>0</right>
   </margins>
   <dock>
-    <position>BottomLeft</position>
+    <position>Floating</position>
     <floatingX>0</floatingX>
-    <floatingY>0</floatingY>
+    <floatingY>740</floatingY>
     <noStrut>yes</noStrut>
     <stacking>Above</stacking>
     <direction>Vertical</direction>
-    <autoHide>yes</autoHide>
+    <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
     <showDelay>300</showDelay>
     <moveButton>Middle</moveButton>
